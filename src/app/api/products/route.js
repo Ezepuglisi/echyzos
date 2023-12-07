@@ -17,6 +17,11 @@ export async function POST(request) {
     try {
         const conn = await connectToDatabase();
 
+
+        if(conn.error){
+            return NextResponse.json({ error: 'error' });
+        }
+
         const request = new conn.Request();
         request.input('product_title', conn.VarChar, data.product_title);
         request.input('product_price', conn.Char, data.product_price);

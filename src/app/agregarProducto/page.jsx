@@ -45,6 +45,7 @@ const AgregarProducto = () => {
       if(response.message){
         setIsLoading(false)
       }else{
+        setIsLoading(false)
         setError(true)
       }
     })
