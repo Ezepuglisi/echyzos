@@ -4,7 +4,21 @@ import { connectToDatabase } from "@/utils/connection";
 
 export async function GET() {
     const conn = await connectToDatabase()
-    return NextResponse.json({ message: 'ok' })
+
+    if(conn.error){
+        return NextResponse.json({ error: 'error en la conexion con la base de datos' })
+    }
+
+    const request = new conn.Request();
+
+    const q = await request.query(`SELECT * FROM [dbo].[products]`)
+
+    console.log(q)
+
+    return NextResponse.json({ 
+        message: 'ok',
+        result: q.recordset
+    })
 }
 
 

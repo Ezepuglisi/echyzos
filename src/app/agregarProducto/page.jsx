@@ -25,7 +25,7 @@ const AgregarProducto = () => {
       product_price:precio,
       units:unidades,
       sizes: clickedButtons.length > 0 ? clickedButtons : null,
-      img: `${toCamelCase(articulo)}.jpg`,
+      img: `${toCamelCase(articulo)}1.jpg,${toCamelCase(articulo)}2.jpg,${toCamelCase(articulo)}3.jpg,${toCamelCase(articulo)}4.jpg`,
       category: category.toLowerCase()
     };
 

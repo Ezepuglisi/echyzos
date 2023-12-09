@@ -5,15 +5,13 @@ import { IoMenuSharp } from "react-icons/io5";
 import { IoMdClose } from "react-icons/io";
 import { useState } from 'react'
 import Link from 'next/link';
+import Logo from '@/svg/Logo';
 
 
 
 const Navbar = () => {
     const [openModal, setOpenModal] = useState(false)
 
-    useEffect(() => {
-        console.log(openModal)
-    }, [openModal])
 
     useEffect(() => {
 
@@ -37,7 +35,8 @@ const Navbar = () => {
             </div>
             <div className="text-white flex py-3 bg-[#0F0F0F] px-10 items-center justify-between shadow-md">
                 <IoMenuSharp size={25} className='lg:hidden' onClick={() => { setOpenModal(true) }} />
-                <p className='text-xl'>Echyzos</p>
+                {/* <p className='text-xl'>Echyzos</p> */}
+                <Logo />
                 <div className='hidden lg:flex lg:flex-col lg:items-end lg:gap-2'>
                     <div className='registro-login flex items-center'>
                         <p className='border-r border-white px-2'>iniciar sesión</p>
